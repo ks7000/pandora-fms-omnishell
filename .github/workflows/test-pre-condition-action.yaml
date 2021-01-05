@@ -1,10 +1,14 @@
+# .github/workflows/test-pre-condition-action.yaml
+
+name: Test pre-condition at same repository
+
 on: [push]
 
 jobs:
   custom_test:
     name: Testing a pre-condition for Omnishell (Pandora FMS)
     runs-on: ubuntu-latest
-
     steps:
       - name: Runs pre-condition
-        uses: ./action-pre-condition.yaml    
+      - uses: actions/checkout@v2
+      - uses: ./action-pre-condition.yaml    
