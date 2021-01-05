@@ -1,6 +1,0 @@
-# action-pre-condition.yaml
-name: "Pandora FMS - Omnishell"
-description: "Run CentOS 6 and execute pre-condition"
-runs:
-  using: "docker"
-  image: "Dockerfile"
