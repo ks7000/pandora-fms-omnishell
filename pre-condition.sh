@@ -7,4 +7,4 @@ set -e
 #[ `rpm -qa | grep -i httpd | wc -l` -lt 1 ] || yum install -y httpd
 
 # Show services installed and filter name for httpd
-rpm -qa | grep -i httpd | wc -l
+rpm -qa | grep -i httpd
