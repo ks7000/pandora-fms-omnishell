@@ -1,15 +1,15 @@
 # Base image from Docker Hub:
-# FROM centos:centos6.9
+FROM centos:centos6.9
 
 # Base image 
-FROM alpine:latest
+# FROM alpine:latest
 
 # installes required packages for our script
-RUN	apk add --no-cache \
-  bash \
-  ca-certificates \
-  curl \
-  jq
+#RUN	apk add --no-cache \
+#  bash \
+#  ca-certificates \
+#  curl \
+#  jq
 
 # Copies your code file  repository to the filesystem 
 #COPY entrypoint.sh /entrypoint.sh
