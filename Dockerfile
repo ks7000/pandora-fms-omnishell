@@ -1,11 +1,21 @@
 # Base image from Docker Hub:
-FROM centos:centos6.9
+# FROM centos:centos6.9
 
-# It copies pre-condition to the filesystem:
-COPY pre-condition.sh /pre-condition.sh
+# Base image 
+FROM alpine:latest
 
-# Change permission to execute pre-condition:
-RUN chmod +x /pre-condition.sh
+# installes required packages for our script
+RUN	apk add --no-cache \
+  bash \
+  ca-certificates \
+  curl \
+  jq
 
-# Docker container starts up and run:
-ENTRYPOINT ["/pre-condition.sh"]
+# Copies your code file  repository to the filesystem 
+COPY entrypoint.sh /entrypoint.sh
+
+# change permission to execute the script and
+RUN chmod +x /entrypoint.sh
+
+# file to execute when the docker container starts up
+ENTRYPOINT ["/entrypoint.sh"]

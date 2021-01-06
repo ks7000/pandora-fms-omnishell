@@ -1,14 +1,16 @@
 # .github/workflows/test-pre-condition-action.yaml
 
-name: Test pre-condition at same repository
-
 on: [push]
 
 jobs:
   custom_test:
-    name: Testing a pre-condition for Omnishell (Pandora FMS)
     runs-on: ubuntu-latest
+    name: We test it locally with act
     steps:
-      - name: Runs pre-condition
-      - uses: actions/checkout@v2
-      - uses: ./action-pre-condition.yaml    
+      - name: Get Pokemon name
+        uses: ks7000/pandora-fms-omnishell@master
+        id: pokemon
+        with:
+          pokemon_id: 150
+      - name: Get the pokemon
+        run: echo "${{ steps.pokemon.outputs.pokemon_name }} attack"

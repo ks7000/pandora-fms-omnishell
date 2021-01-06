@@ -1,10 +1,16 @@
-on: [push]
-
-jobs:
-  custom_test:
-    name: Testing a pre-condition for Omnishell (Pandora FMS)
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Runs pre-condition
-        uses: ./action-pre-condition.yaml    
+# action.yaml
+name: "Blog Custom Github Action"
+description: "Call an API and get the result"
+inputs:
+  pokemon_id:
+    description: "number of the pokemon in the pokedex"
+    required: true
+    default: 1
+outputs:
+  pokemon_name:
+    description: "Name des Pokemons"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.pokemon_id}}
