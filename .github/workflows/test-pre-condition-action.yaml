@@ -5,12 +5,12 @@ on: [push]
 jobs:
   custom_test:
     runs-on: ubuntu-latest
-    name: We test it locally with act
+    name: Usin curl for get HTTP head and putting out Docker container
     steps:
       - name: Get HTTP head with curl
         uses: ks7000/pandora-fms-omnishell@master
-#        id: pokemon
-#        with:
-#          pokemon_id: 150
-#      - name: Get the pokemon
-#        run: echo "${{ steps.pokemon.outputs.pokemon_name }} attack"
+        id: url
+        with:
+          url_id: https://www.ks7000.net.ve/
+      - name: Get response from curl out container
+        run: echo "${{ steps.url.outputs.http_head }}"

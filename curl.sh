@@ -1,4 +1,13 @@
 #!/bin/bash
 set -e
 
-curl -I https://www.ks7000.net.ve/
+url="${INPUT_URL_ID}"
+echo $url
+
+http_head=$(curl -I "${url}")
+echo $http_head
+
+echo "::set-output name=http_head::$http_head"
+
+
+
