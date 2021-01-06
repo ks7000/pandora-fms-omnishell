@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Get HTTP head with curl
         uses: ks7000/pandora-fms-omnishell@master
-        id: url
-        with:
-          url_id: https://www.ks7000.net.ve/
+#        id: url
+#        with:
+#          url_id: https://www.ks7000.net.ve/
       - name: Get response from curl out container
         run: echo "curl response ${{ steps.url.outputs.http_head }}"
