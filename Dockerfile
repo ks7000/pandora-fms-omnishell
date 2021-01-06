@@ -12,10 +12,11 @@ RUN	apk add --no-cache \
   jq
 
 # Copies your code file  repository to the filesystem 
-COPY entrypoint.sh /entrypoint.sh
+#COPY entrypoint.sh /entrypoint.sh
+COPY curl.sh /curl.sh
 
 # change permission to execute the script and
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /curl.sh
 
 # file to execute when the docker container starts up
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/curl.sh"]

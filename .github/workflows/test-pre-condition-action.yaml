@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     name: We test it locally with act
     steps:
-      - name: Get Pokemon name
+      - name: Get HTTP head with curl
         uses: ks7000/pandora-fms-omnishell@master
-        id: pokemon
-        with:
-          pokemon_id: 150
-      - name: Get the pokemon
-        run: echo "${{ steps.pokemon.outputs.pokemon_name }} attack"
+#        id: pokemon
+#        with:
+#          pokemon_id: 150
+#      - name: Get the pokemon
+#        run: echo "${{ steps.pokemon.outputs.pokemon_name }} attack"
