@@ -1,6 +1,14 @@
 # action.yaml
 name: "curl Github Action"
 description: "Request HTTP head with curl"
+inputs:
+  url_id:
+  description: "Web page for verify with curl"
+  required: true
+  default: http://www.soporteweb.com/
+outputs:
+  http_head:
+    description: "Response from curl using -I parameter"
 #inputs:
 #  pokemon_id:
 #    description: "number of the pokemon in the pokedex"
@@ -12,5 +20,7 @@ description: "Request HTTP head with curl"
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.url_id }}
 #  args:
 #    - ${{ inputs.pokemon_id}}
