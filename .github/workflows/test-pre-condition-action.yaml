@@ -5,12 +5,12 @@ on: [push]
 jobs:
   custom_test:
     runs-on: ubuntu-latest
-    name: Usin curl for get HTTP head and putting out Docker container
+    name: Using Docker on Ubuntu for run CentOS 6 and install httpd service
     steps:
-      - name: Get HTTP head with curl
+      - name: using rpm for install httpd, if necessary
         uses: ks7000/pandora-fms-omnishell@master
 #        id: url
 #        with:
 #          url_id: https://www.ks7000.net.ve/
-      - name: Get response from curl out container
-        run: echo "curl response ${{ steps.url.outputs.http_head }}"
+#      - name: Get response from curl out container
+#        run: echo "curl response ${{ steps.url.outputs.http_head }}"

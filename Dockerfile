@@ -13,10 +13,10 @@ FROM centos:centos6.9
 
 # Copies your code file  repository to the filesystem 
 #COPY entrypoint.sh /entrypoint.sh
-COPY curl.sh /curl.sh
+COPY pre-condition.sh /pre-condition.sh
 
-# change permission to execute the script and
-RUN chmod +x /curl.sh
+# Change permission to execute the script and
+RUN chmod +x /pre-condition.sh
 
-# file to execute when the docker container starts up
-ENTRYPOINT ["/curl.sh"]
+# File to execute when the docker container starts up
+ENTRYPOINT ["/pre-condition.sh"]

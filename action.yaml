@@ -1,26 +1,16 @@
 # action.yaml
-name: "curl Github Action"
-description: "Request HTTP head with curl"
-inputs:
-  url_id:
-    description: "Web page for verify with curl"
-    required: true
-    default: http://www.soporteweb.com/
-outputs:
-  http_head:
-    description: "Response from curl using -I parameter"
+name: "httpd Github Action"
+description: "Verify if httpd service is installed on CentOS 6.9"
 #inputs:
-#  pokemon_id:
-#    description: "number of the pokemon in the pokedex"
+#  url_id:
+#    description: "Web page for verify with curl"
 #    required: true
-#    default: 1
+#    default: http://www.soporteweb.com/
 #outputs:
-#  pokemon_name:
-#    description: "Name des Pokemons"
+#  http_head:
+#    description: "Response from curl using -I parameter"
 runs:
   using: "docker"
   image: "Dockerfile"
-  args:
-    - ${{ inputs.url_id }}
 #  args:
-#    - ${{ inputs.pokemon_id}}
+#    - ${{ inputs.url_id }}
