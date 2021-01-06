@@ -13,4 +13,4 @@ jobs:
         with:
           url_id: https://www.ks7000.net.ve/
       - name: Get response from curl out container
-        run: echo "${{ steps.url.outputs.http_head }}"
+        run: echo "curl response ${{ steps.url.outputs.http_head }}"
